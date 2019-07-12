@@ -1,8 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>New post</h1>
+<h1>New Journal entry</h1>
 <form method="POST" class="post-form">{% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="save btn btn-default">Save</button>
+<div class="form-group">
+    <label for="title">Tilte</label>
+    {{form.title}}
+  </div>
+  <div class="form-group">
+    <label for="text">Text:</label>
+    {{form.text}}
+  </div>
+    <button type="submit" class="save btn btn-primary">Save</button>
 </form>
 {% endblock %}
