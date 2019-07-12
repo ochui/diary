@@ -13,12 +13,12 @@ class PostForm(forms.ModelForm):
             }
         )
 
-        self.fields['text'].widget = forms.Textarea(
-            attrs={
-                'class': 'form-control',
-                'placeholder': "What's on your mind" ,
-            }
-        )
+        # self.fields['text'].widget = forms.Textarea(
+        #     attrs={
+        #         'class': 'form-control',
+        #         'placeholder': "What's on your mind" ,
+        #     }
+        # )
     class Meta:
         model = Post
         fields = ('title', 'text',)

@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %}{% load martortags %}
 {% block content %}
 <div class="post">
     {% if post.published_date %}
@@ -7,6 +7,6 @@
     </div>
     {% endif %}
     <h1>{{ post.title }}</h1>
-    <p>{{ post.text|linebreaksbr }}</p>
+    <p>{{ post.text|safe_markdown|linebreaksbr }}</p>
 </div>
 {% endblock content %}
