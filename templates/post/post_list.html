@@ -10,7 +10,8 @@
             </div>
             {% endif %}
             <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-            <p>{{ post.text|linebreaksbr }}</p>
+            <p>{{ post.text|safe|truncatewords:"50"|linebreaks }}</p>
+            <a href="{% url 'post_detail' pk=post.pk %}">read more</a>
         </div>
     </div>
 </div>
