@@ -25,7 +25,7 @@ SECRET_KEY = 'dthush=%#jmr#zhvo(izb_j)g479k)j0@166q*wgwl^6#fw4di'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -135,7 +135,7 @@ MARTOR_ENABLE_CONFIGS = {
     'imgur': 'true',     # to enable/disable imgur/custom uploader.
     'mention': 'false',  # to enable/disable mention
     'jquery': 'true',    # to include/revoke jquery (require for admin default django)
-    'living': 'false',   # to enable/disable live updates in preview
+    'living': 'true',   # to enable/disable live updates in preview
 }
 
 # To setup the martor editor with label or not (default is False)

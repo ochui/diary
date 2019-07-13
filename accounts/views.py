@@ -4,12 +4,13 @@ from django.urls import reverse_lazy
 from django.views.generic import CreateView
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
+from django.contrib.auth.views import LoginView
 from .models import Post
-from .forms import PostForm
+from .forms import PostForm, RegisterForm, LoginForm
 
 
 class SignUp(CreateView):
-    form_class = UserCreationForm
+    form_class = RegisterForm
     success_url = reverse_lazy('login')
     template_name = 'registration/signup.html'
 
@@ -40,3 +41,6 @@ class PostCreateView(LoginRequiredMixin, CreateView):
         self.object.save()
         return super().form_valid(form)
 
+class CustomLoginView(LoginView):
+    
+    form_class = LoginForm
