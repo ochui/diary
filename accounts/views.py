@@ -52,7 +52,7 @@ class CustomLoginView(LoginView):
     form_class = LoginForm
 
 
-class DashboardView(ListView, LoginRequiredMixin):
+class DashboardView(LoginRequiredMixin, ListView):
 
     model = Post
     template_name = "dashboard/dashboard.html"
@@ -77,3 +77,6 @@ class PostDeleteView(LoginRequiredMixin, DeleteView):
     model = Post
     success_url = reverse_lazy('dashboard')
     template_name = "post/post_check_delete.html"
+
+class IndexView(TemplateView):
+    template_name = "index.html"
